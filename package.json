@@ -1,0 +1,28 @@
+{
+  "name": "pesticide",
+  "version": "1.0.0",
+  "description": "\"# pesticide\"",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/x-1337-x/pesticide.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/x-1337-x/pesticide/issues"
+  },
+  "homepage": "https://github.com/x-1337-x/pesticide#readme",
+  "devDependencies": {
+    "angular": "^1.5.5",
+    "angular-route": "^1.5.5",
+    "body-parser": "^1.15.1",
+    "bootstrap": "^3.3.6",
+    "express": "^4.13.4",
+    "jquery": "^2.2.3"
+  }
+}
