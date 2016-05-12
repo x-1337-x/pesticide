@@ -16,7 +16,7 @@ app.use('/libs', express.static(path.resolve(__dirname + '/../node_modules')));
 app.use(express.static(path.resolve(__dirname + '/../public')));
 
 
-//DB
+//***********DB***************
 const mongoose = require('mongoose');
 const db = require('./db/config');
 
@@ -31,7 +31,7 @@ mongoose.connection.on('error', function (err) {
 mongoose.connect(db.url);
 
 
-//ROUTES
+//************ROUTES****************
 
 var apiRouter = express.Router();
 

@@ -54,6 +54,9 @@ function getOneContract(req, res) {
 
 function deleteContract(req, res) {
   db.Contracts.findByIdAndRemove(req.params.id, function (err, contract) {
+
+    console.log(contract);
+
     if(err){
       res.json({
         success: false,
@@ -63,6 +66,7 @@ function deleteContract(req, res) {
     }
       res.json({
         success: true,
+        contract: contract //sends back the deleted db document
       })
   })
 }
