@@ -67,26 +67,26 @@ function deleteContract(req, res) {
   })
 }
 
-function changeContract(req, res) {
-  var id = req.params.id;
-  db.Contracts.findByIdAndUpdate(id, req.body, {new: true}, function (err, updated) {
-    if(err){
-      res.json({
-        success: false,
-        errors: err
-      })
-      return;
-    }
-    res.json({
-      success: true,
-    })
-  })
-}
+// function changeContract(req, res) {
+//   var id = req.params.id;
+//   db.Contracts.findByIdAndUpdate(id, req.body, {new: true}, function (err, updated) {
+//     if(err){
+//       res.json({
+//         success: false,
+//         errors: err
+//       })
+//       return;
+//     }
+//     res.json({
+//       success: true,
+//     })
+//   })
+// }
 
 module.exports = {
   addContract: createContract,
   getAllContracts: getAllContracts,
   getContractById: getOneContract,
-  changeContract: changeContract,
+  //changeContract: changeContract,
   pullContract: deleteContract
 }
