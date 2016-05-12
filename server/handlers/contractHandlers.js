@@ -21,22 +21,72 @@ function createContract(req, res) {
 function getAllContracts(req, res) {
   db.Contracts.find({}, function(err, contracts){
 
-  if (err) {
-    res.json({
-      success: false,
-      errors: err
-    })
-    return;
-  }
+    if (err) {
+      res.json({
+        success: false,
+        errors: err
+      })
+      return;
+    }
 
-  res.json({
-    success: true,
-    contracts: contracts
+    res.json({
+      success: true,
+      contracts: contracts
+    })
   })
-})
+}
+
+function getOneContract(req, res) {
+  db.Contracts.findById(req.params.id, function(err, contract) {
+    if(err){
+      res.json({
+        success: false,
+        errors: err
+      })
+      return;
+    }
+    res.json({
+      success: true,
+      contracts: contract
+    })
+  })
+}
+
+function deleteContract(req, res) {
+  db.Contracts.findByIdAndRemove(req.params.id, function (err, contract) {
+    if(err){
+      res.json({
+        success: false,
+        errors: err
+      })
+      return;
+    }
+      res.json({
+        success: true,
+      })
+  })
+}
+
+function changeContract(req, res) {
+  var id = req.params.id;
+  db.Contracts.findByIdAndUpdate(id, req.body, {new: true}, function (err, updated) {
+    if(err){
+      res.json({
+        success: false,
+        errors: err
+      })
+      return;
+    }
+    res.json({
+      success: true,
+    })
+  })
 }
 
 module.exports = {
   addContract: createContract,
-  getAllContracts: getAllContracts
+  getAllContracts: getAllContracts,
+  getContractById: getOneContract,
+  changeContract: changeContract,
+  pullContract: deleteContract
 }

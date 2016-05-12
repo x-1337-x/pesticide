@@ -41,6 +41,11 @@ apiRouter.route('/contracts')
   .post(contractsAPI.addContract)
   .get(contractsAPI.getAllContracts);
 
+apiRouter.route('/contracts/:id')
+  .get(contractsAPI.getContractById)
+  //.put(contractsAPI.changeContract)
+  .delete(contractsAPI.pullContract);
+
 app.use(apiRouter);
 
 
