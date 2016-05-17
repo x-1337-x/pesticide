@@ -12,7 +12,10 @@ app.listen(port, function () {
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+//*********ALIASES************
+
 app.use('/libs', express.static(path.resolve(__dirname + '/../node_modules')));
+app.use('/frontend', express.static(path.resolve(__dirname + '/../public/views')));
 app.use(express.static(path.resolve(__dirname + '/../public')));
 
 
@@ -52,3 +55,7 @@ app.use(apiRouter);
 app.get('/', function (req, res) {
   res.sendFile(path.resolve(__dirname + '/../public/app.html'));
 });
+
+// app.get('*', function (req, res) {
+//   res.sendFile(path.resolve(__dirname + '/../public/app.html'));
+// })

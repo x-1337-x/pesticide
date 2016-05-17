@@ -3,15 +3,19 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="/libs/bootstrap/dist/css/bootstrap.min.css">
+
   </head>
   <body data-ng-app="pesticide">
     <div>{{3 + 2}}</div>
+    <ng-view></ng-view>
   </body>
 
-  <script src="/libs/angular/angular.js"></script>
   <script src="/libs/jquery/dist/jquery.js"></script>
   <script src="/libs/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="/libs/angular/angular.js"></script>
   <script src="/libs/angular-route/angular-route.js"></script>
 
-  <script src="/scripts/app.js"></script>
+  <script src="/routes/app.js"></script>
+  <script src="/scripts/ContractsController.js"></script>
 </html>

@@ -1,0 +1,18 @@
+<div class="container">
+  <h3>ABANDON ALL HOPE WHOEVER STEPS HERE</h3>
+
+  <div class="container">
+    <ul data-ng-show="ContractsController.contracts.length > 0">
+      <li class="list" data-ng-repeat="contract in ContractsController.contracts">
+        <div>
+          TYPE OF FUN: {{contract.job_type}}<br>
+          TARGET: {{contract.target.name}}<br>
+          DUE DATE: {{contract.date_added | date}}<br>
+          REWARD: {{contract.reward}}<br>
+          CURRENT STATUS: {{contract.status}}<br>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+</div>
