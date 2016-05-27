@@ -20,7 +20,6 @@ function createContract(req, res) {
 
 function getAllContracts(req, res) {
   db.Contracts.find({}, function(err, contracts){
-
     if (err) {
       res.json({
         success: false,
